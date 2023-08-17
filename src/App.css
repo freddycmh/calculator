@@ -1,0 +1,16 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons > button {
+  background-color: grey;
+}
+
+.buttons > button:hover,
+.buttons > button.active {
+  background-color: #007bff;
+}
