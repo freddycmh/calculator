@@ -32,7 +32,7 @@ const CostCalculator = () => {
 
     switch (name) {
       case "units":
-        setUnits(sanitizedDecimalValue); // Convert back to number
+        setUnits(parseInt(sanitizedValue)); // Convert back to number
         break;
       case "garmentTotal":
         setGarmentTotal(sanitizedDecimalValue); // Convert back to number
@@ -72,7 +72,14 @@ const CostCalculator = () => {
       comments
     ) {
       setIsloading(true);
-      const sum = garmentTotal + decoration + shipping + fees;
+      const sum =
+        parseFloat(garmentTotal) +
+        parseFloat(decoration) +
+        parseFloat(shipping) +
+        parseFloat(fees);
+
+      console.log(parseFloat(garmentTotal));
+
       setTotalCost(sum);
 
       const costPerUnit = sum / units;
@@ -80,13 +87,13 @@ const CostCalculator = () => {
 
       let extraCostPercentage = 0;
       if (units >= 0 && units <= 12) {
-        extraCostPercentage = 0.45; // 45% for 0-12 units
+        extraCostPercentage = 0.48; // 45% for 0-12 units
       } else if (units >= 13 && units <= 30) {
-        extraCostPercentage = 0.4; // 40% for 13-30 units
+        extraCostPercentage = 0.43; // 40% for 13-30 units
       } else if (units >= 31 && units <= 100) {
-        extraCostPercentage = 0.35; // 35% for 31-100 units
+        extraCostPercentage = 0.38; // 35% for 31-100 units
       } else if (units > 100) {
-        extraCostPercentage = 0.3; // 30% for 100+ units
+        extraCostPercentage = 0.33; // 30% for 100+ units
       }
 
       const costPerUnitWithExtraPercentage =
