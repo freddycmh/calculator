@@ -78,8 +78,6 @@ const CostCalculator = () => {
         parseFloat(shipping) +
         parseFloat(fees);
 
-      console.log(parseFloat(garmentTotal));
-
       setTotalCost(sum);
 
       const costPerUnit = sum / units;
