@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://freddycmh.github.io/calculator",
+  "homepage": "https://freddycmh.github.io/calculator/harun",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
